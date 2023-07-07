@@ -43,9 +43,9 @@ def show_pet_details(pet_id):
     form = EditPet(obj=pet)
 
     if form.validate_on_submit():
-        pet.name = form.photo_url.data
+        pet.photo_url = form.photo_url.data
         pet.notes = form.notes.data
-        pet.available = form.available.data
+        pet.available = form.available.data == "True"
         db.session.commit()
         return redirect('/')
     else:

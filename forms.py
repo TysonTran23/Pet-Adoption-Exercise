@@ -30,5 +30,5 @@ class EditPet(FlaskForm):
     photo_url = StringField("Add a photo of the pet!", validators=[Optional(), URL()])
     notes = StringField("Add notes")
     available = SelectField(
-        "Available", choices=[(True, "Available"), (False, "Not Available")]
+        "Available", choices=[("True", "Available"), ("False", "Not Available")]
     )
